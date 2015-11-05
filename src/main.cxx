@@ -172,7 +172,7 @@ void print_json_to_screen(char* output, int count, int done) {
     if(done==1 && count>1) {
         printf("[\n%s,\n", output);
     } else if(done==1 && count == 1) {
-        printf("[\n%s\n]\n", output);
+        printf("%s\n", output);
     } else if(done == count) {
         printf("%s\n]\n", output);
     } else {
@@ -195,7 +195,7 @@ char *make_json_string(codegen_response_t* response) {
     sprintf(output,"{\"metadata\":{\"artist\":\"%s\", \"release\":\"%s\", \"title\":\"%s\", \"genre\":\"%s\", \"bitrate\":%d,"
                     "\"sample_rate\":%d, \"duration\":%d, \"filename\":\"%s\", \"samples_decoded\":%d, \"given_duration\":%d,"
                     " \"start_offset\":%d, \"version\":%2.2f, \"codegen_time\":%2.6f, \"decode_time\":%2.6f}, \"code_count\":%d,"
-                    " \"code\":\"%s\", \"tag\":%d}",
+                    " \"code\":%s, \"tag\":%d}",
         escape(pMetadata->Artist()).c_str(),
         escape(pMetadata->Album()).c_str(),
         escape(pMetadata->Title()).c_str(),
