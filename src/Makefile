@@ -8,7 +8,8 @@ UNAME := $(shell uname -s)
 CXX=g++
 CC=gcc
 #OPTFLAGS=-g -O0 -DUNHASHED_CODES
-OPTFLAGS=-O3 -DBOOST_UBLAS_NDEBUG -DNDEBUG -DUNHASHED_CODES
+OPTFLAGS=-O3 -DBOOST_UBLAS_NDEBUG -DUNHASHED_CODES
+# -DNDEBUG
 BOOST_CFLAGS=-I/usr/local/include/boost-1_35
 TAGLIB_CFLAGS=`taglib-config --cflags`
 TAGLIB_LIBS=`taglib-config --libs`
